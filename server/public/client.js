@@ -10,10 +10,15 @@ foodApp.controller('FoodController', function() {
     {name: 'potato'}
   ];
 
-  self.foodToAdd = '';
+  self.foodToAdd = {};
 
   self.addFood = function(userInput) {
-    self.foods.push({ name: userInput });
-    self.foodToAdd = '';
+    //if deliciousness between 1-100 inclusive, push to array
+    if(userInput.deliciousness <= 100 && userInput.deliciousness >= 1) {
+      self.foods.push(userInput);
+      self.foodToAdd = {};
+    } else {
+      alert('Deliciousness must be a number between 1 and 100')
+    }
   };
 })
