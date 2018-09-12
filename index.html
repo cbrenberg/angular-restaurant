@@ -5,11 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Angular Restaurant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="/vendors/angular.min.js"></script>
+  <script src="vendors/angular.min.js"></script>
   <script src="client.js"></script>
 </head>
-<body>
+<body ng-app="FoodApp" ng-controller="FoodController as vm">
   <h1>Angular Restaurant</h1>
-  <div></div>
+  <ul>
+    <li ng-repeat="food in vm.foods">{{food.name}}</li>
+  </ul>
+  <div>{{vm}}</div>
 </body>
 </html>
